@@ -1,0 +1,14 @@
+USER INTERFACE
+
+- Add functions for repeat album, repeat song
+
+- Add a timer and seek bar
+
+- Detect when the server is no longer available and display an appropriate
+  message.
+
+ADDITIONAL FEATURES
+
+- Allow using a page fragment (/#xyz...) to specify a song.
+
+- Remote control of clients

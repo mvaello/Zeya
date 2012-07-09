@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" type="text/css" href="zeya.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script type="text/javascript" src="zeya.js"><!--
+  // --></script>
+  <title>Zeya</title>
+</head>
+<body onload="init()"
+      onunload="cleanup()"
+      onkeydown="return keydown_handler(event);"
+      onkeypress="return keypress_handler(event);">
+  <div id="header">
+    <div id="navigation-bar">
+      <div id="navigation-bar-left">
+	<select name="playlist" id="corpus-selector" onchange="update_playlist()">
+	</select>
+	<!-- Used to persist the value of corpus-selector. -->
+	<input type="text" id="shadow-corpus-selector" name="shadow_corpus_selector" style="display: none">
+      </div>
+      <div id="navigation-bar-right">
+	<form id="search-form" name="search_form" onsubmit="return search(this)">
+	  <span id="searchicon" class="control">
+	    <img id="search_img" src="search.png" onclick="search()" title="Search"
+		 style="margin-right: -8px;">
+	  </span>
+	  <input type="text" name="search_box" size="16" id="search_box"
+		 placeholder="Search" spellcheck="false"/>
+	  <span id="clearicon" class="control">
+	    <img id="clear_img" src="clear_search.png" onclick="clear_search()" title="Clear search"
+		 style="margin-left: -8px;">
+	  </span>
+	</form>
+      </div>
+    </div>
+    <div id="header-left">
+      <span id="previous_button" class="control">
+	<img id="previous_img" src="previous.png" alt="Previous" onclick="previous()" title="Previous">
+      </span>
+      <span id="play_button" class="control">
+	<img id="play_img" src="play.png" alt="Play" onclick="play()" title="Play">
+      </span>
+      <span id="pause_button" class="control">
+	<img id="pause_img" src="pause.png" alt="Pause" onclick="pause()" title="Pause">
+      </span>
+      <span id="next_button" class="control">
+	<img id="next_img" src="next.png" alt="Next" onclick="next()" title="Next">
+      </span>
+      <span id="spinner">
+	<img id="spinner_icon" src="spinner.gif" style="visibility: hidden;">
+      </span>
+    </div>
+    <div id="header-right">
+      <div id="scrubber-box">
+	<div id="time-text-field"></div>
+      </div>
+      <span id="repeat" class="control">
+	<img id="repeat_img" src="repeat.png" onclick="repeat()" title="Repeat">
+      </span>
+      <span id="shuffle" class="control">
+	<img id="shuffle_img" src="shuffle.png" onclick="shuffle()" title="Shuffle"
+	     style="padding-right: 2px">
+      </span>
+    </div>
+    <div id="header-main">
+      <div id="header-main-inner">
+	<span class="title" id="title_text"></span>
+	<span class="artist" id="artist_text"></span>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <div id="footer-left">
+      <span id="status_area"></span>
+    </div>
+    <div id="footer-right">
+      Powered by <a href="http://web.psung.name/zeya/" target="_blank">Zeya</a> |
+      <a href="javascript:show_help();">Help</a>
+    </div>
+  </div>
+  <div id="content">
+    <div id="loading">Loading collection...</div>
+    <div id="unsupported">Zeya requires a browser that supports the HTML 5
+      draft standard <tt>&lt;audio&gt;</tt> tag. We
+      recommend <a href="http://www.mozilla.com/firefox/">Mozilla Firefox</a>
+      3.5+ or <a href="http://www.google.com/chrome">Google Chrome</a>
+      4.0+.</div>
+    <div id="helpcontainer">
+      <div id="help">
+	<p class="heading"><b>Keyboard shortcuts</b></p>
+	<table>
+	  <tr><td>SPACE</td><td>Play/pause</td></tr>
+	  <tr><td>j</td><td>Next track</td></tr>
+	  <tr><td>k</td><td>Previous track</td></tr>
+	  <tr><td>/</td><td>Search</td></tr>
+	  <tr><td>?</td><td>Show this help message</td></tr>
+	</table>
+	<p class="heading"><b>Search operators</b></p>
+	<table>
+	  <tr><td>title:</td><td>Search in track title</td></tr>
+	  <tr><td>artist:</td><td>Search in artist name</td></tr>
+	  <tr><td>album:</td><td>Search in album name</td></tr>
+	</table>
+	<p style="margin-bottom: 0; text-align: right">
+	  <a href="javascript:hide_help()">Close</a>
+	</p>
+      </div>
+    </div>
+    <div id="collection" style="display: none"></div>
+  </div>
+</body>
+</html>
