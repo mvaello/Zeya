@@ -24,14 +24,17 @@ body {
 #navigation-bar {
     height: 32px;
     background-color: #b7c4d1;
-    background: -moz-linear-gradient(top, #bfccd9, #aebac6);
+   /* background: -moz-linear-gradient(top, #bfccd9, #aebac6);
     background: -webkit-gradient(linear, left top, left bottom, from(#bfccd9), to(#aebac6));
+    */
+    /* TODO -- check it... */
+    background: -linear-gradient(top, #bfccd9, #aebac6); 
     border-bottom: 1px #89a solid;
 }
 
 #navigation-bar-left {
     float: left;
-    margin: 0 0 0 0;
+    margin: 0;
     padding: .25em 0 0 4px;
     vertical-align: middle;
 }
@@ -120,6 +123,9 @@ form#search-form input {
     padding: 1px;
 }
 
+/* TODO -- Put in one sentence #loading and #unsuported
+ * */
+
 #loading {
     margin: 3em auto 0 auto;
     padding: .25em;
@@ -127,8 +133,11 @@ form#search-form input {
     background-color: #f3f2aa;
     text-align: center;
     font-weight: bold;
+    border-radius: 5px;
+    /*
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
+    */
 }
 
 #unsupported {
@@ -139,8 +148,11 @@ form#search-form input {
     background-color: #ffc6bb;
     color: #500;
     text-align: center;
+    border-radius: 5px;
+    /*
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
+    */
 }
 
 #unsupported a { color: #400; }
@@ -153,14 +165,16 @@ form#search-form input {
 }
 
 #help {
-    -webkit-border-radius: 5px;
+    /*-webkit-border-radius: 5px;
     -moz-border-radius: 5px;
+    */
     padding: 5px;
     background-color: #333;
     color: #fff;
     width: 25em;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 5px;
 }
 
 #help a { color: #fff; }
