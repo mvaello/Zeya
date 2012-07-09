@@ -11,7 +11,7 @@ body {
 
 #header {
     position: absolute;
-    padding: 0px;
+    padding: 0;
     top: 0;
     left: 0;
     width: 100%;
@@ -32,13 +32,11 @@ body {
 #navigation-bar-left {
     float: left;
     margin: 0 0 0 0;
-    padding: 0.25em 0 0 4px;
+    padding: .25em 0 0 4px;
     vertical-align: middle;
 }
 
-#corpus-selector {
-    display: none;
-}
+#corpus-selector { display: none; }
 
 #navigation-bar-right {
     float: right;
@@ -82,13 +80,9 @@ form#search-form input {
     font-size: small;
 }
 
-#header-main {
-    margin-top: 20px;
-}
+#header-main { margin-top: 20px; }
 
-#header-main-inner {
-    margin-top: -0.70em;
-}
+#header-main-inner { margin-top: -0.70em; }
 
 #footer {
     position: absolute;
@@ -128,7 +122,7 @@ form#search-form input {
 
 #loading {
     margin: 3em auto 0 auto;
-    padding: 0.25em;
+    padding: .25em;
     width: 15em;
     background-color: #f3f2aa;
     text-align: center;
@@ -140,7 +134,7 @@ form#search-form input {
 #unsupported {
     display: none;
     margin: 3em auto 0 auto;
-    padding: 0.25em;
+    padding: .25em;
     width: 26em;
     background-color: #ffc6bb;
     color: #500;
@@ -149,9 +143,7 @@ form#search-form input {
     -moz-border-radius: 5px;
 }
 
-#unsupported a {
-    color: #400;
-}
+#unsupported a { color: #400; }
 
 #helpcontainer {
     position: fixed;
@@ -171,9 +163,7 @@ form#search-form input {
     margin-right: auto;
 }
 
-#help a {
-    color: #fff;
-}
+#help a { color: #fff; }
 
 #help .heading {
     text-align: center;
@@ -212,6 +202,9 @@ span#spinner img {
 }
 
 span.control img.activated {
+
+    /* TODO -> border: 1px solid; */
+
     border-bottom: 1px solid #b6b3b0;
     border-right: 1px solid #b6b3b0;
     border-top: 1px solid #888582;
@@ -220,7 +213,7 @@ span.control img.activated {
 }
 
 span.control img.grayed {
-    opacity: 0.4;
+    opacity: .4;
     cursor: default;
 }
 
@@ -234,13 +227,7 @@ span.artist {
     font-style: italic;
 }
 
-a:link {
-    color: #00a;
-}
-
-a:visited {
-    color: #00a;
-}
+a:link, a:visited { color: #00a; }
 
 table#collection_table {
     width: 100%;
@@ -248,18 +235,14 @@ table#collection_table {
     border-spacing: 0;
 }
 
-table#collection_table tr.oddrow {
-    background-color: #e6e4e2;
-}
+table#collection_table tr.oddrow { background-color: #e6e4e2; }
 
 table#collection_table tr.selectedrow {
     background-color: #46d;
     color: #fff;
 }
 
-table#collection_table tr.selectedrow a {
-    color: #fff;
-}
+table#collection_table tr.selectedrow a { color: #fff; }
 
 table#collection_table td {
     margin: 0;
