@@ -12,3 +12,5 @@ ADDITIONAL FEATURES
 - Allow using a page fragment (/#xyz...) to specify a song.
 
 - Remote control of clients
+
+- Login for multiple users 
