@@ -33,7 +33,7 @@ body {
 }
 
 #navigation-bar-left {
-    float: left;
+    loat: left;
     margin: 0;
  /* padding: .25em 0 0 4px;*/
     padding: .75 0 0 4px;
@@ -126,34 +126,24 @@ form#search-form input {
 
 /* TODO -- Put in one sentence #loading and #unsuported
  * */
-
-#loading {
+#loading, #unsupported {
     margin: 3em auto 0 auto;
     padding: .25em;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#loading {
     width: 15em;
     background-color: #f3f2aa;
-    text-align: center;
     font-weight: bold;
-    border-radius: 5px;
-    /*
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    */
 }
 
 #unsupported {
     display: none;
-    margin: 3em auto 0 auto;
-    padding: .25em;
     width: 26em;
     background-color: #ffc6bb;
     color: #500;
-    text-align: center;
-    border-radius: 5px;
-    /*
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    */
 }
 
 #unsupported a { color: #400; }
@@ -166,11 +156,6 @@ form#search-form input {
 }
 
 #help {
-    /*-webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    */
-    padding: 5px;
-    background-color: #333;
     color: #fff;
     width: 25em;
     margin-left: auto;
@@ -217,9 +202,6 @@ span#spinner img {
 }
 
 span.control img.activated {
-
-    /* TODO -> border: 1px solid; */
-
     border-bottom: 1px solid #b6b3b0;
     border-right: 1px solid #b6b3b0;
     border-top: 1px solid #888582;
