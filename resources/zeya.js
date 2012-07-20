@@ -247,12 +247,10 @@ function render_collection() {
     var td3 = document.createElement('td');
     var td4 = document.createElement('td');
     
-    //var td1 = document.createElement('td');
-    //var td4 = td3 = td2 = td1;
-    
+    // TODO: Create node for duration
     td1.appendChild(link);
     td2.appendChild(document.createTextNode(item.artist));
-    td3.appendChild(document.createTextNode(item.album));
+    td4.appendChild(document.createTextNode(item.album));
     tr.appendChild(td1);
     tr.appendChild(td2);
     tr.appendChild(td3);
