@@ -45,7 +45,7 @@ var using_gecko_1_9_1 = navigator.userAgent.indexOf("Gecko/") > -1
 function can_play_native_audio() {
   if (!document.createElement('audio').canPlayType) {
     return false;
-  }
+ }
   // Supported browsers will return 'probably' or 'maybe' here
   var can_play = document.createElement('audio').canPlayType(
     'audio/ogg; codecs="vorbis"');
@@ -688,6 +688,12 @@ function update_time() {
   document.getElementById('time-text-field').innerHTML = minute + ":" + second;
 }
 
+function seek_bar(){
+    º
+
+}
+
+
 // Clean up after ourselves when the page is unloaded.
 function cleanup() {
   // Firefox seems to maintain a huge audio buffer and playback doesn't always
@@ -780,5 +786,4 @@ function keypress_handler(e) {
     }
 
   return true;
- }
- 
+}
