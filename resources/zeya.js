@@ -213,11 +213,16 @@ function render_collection() {
   header_td2.style.width = "29%";
   header_td2.appendChild(document.createTextNode("Artist"));
   var header_td3 = document.createElement("td");
-  header_td3.style.width = "29%";
-  header_td3.appendChild(document.createTextNode("Album"));
+  header_td3.style.width = "3%";
+  header_td3.appendChild(document.createTextNode("Duration"));
+  var header_td4 = document.createElement("td");
+  header_td4.style.width = "29%";
+  header_td4.appendChild(document.createTextNode("Album"));
+  
   t_head.appendChild(header_td1);
   t_head.appendChild(header_td2);
   t_head.appendChild(header_td3);
+  t_head.appendChild(header_td4);
   t.appendChild(t_head);
 
   // Each item will have one row in the table.
@@ -236,15 +241,22 @@ function render_collection() {
     } else {
       tr.className = get_row_class_from_index(index);
     }
+    
     var td1 = document.createElement('td');
     var td2 = document.createElement('td');
     var td3 = document.createElement('td');
+    var td4 = document.createElement('td');
+    
+    //var td1 = document.createElement('td');
+    //var td4 = td3 = td2 = td1;
+    
     td1.appendChild(link);
     td2.appendChild(document.createTextNode(item.artist));
     td3.appendChild(document.createTextNode(item.album));
     tr.appendChild(td1);
     tr.appendChild(td2);
     tr.appendChild(td3);
+    tr.appendChild(td4);
     t.appendChild(tr);
   }
 
