@@ -735,25 +735,50 @@ function keypress_handler(e) {
       == window.document.getElementById('search_box')) {
     return true;
   }
-  if (String.fromCharCode(keynum) === ' ') {
-    if (current_state == 'play') {
-      pause();
-    } else if (current_state == 'pause') {
-      play();
+
+//  if (String.fromCharCode(keynum) === ' ') {
+//    if (current_state == 'play') {
+//      pause();
+//    } else if (current_state == 'pause') {
+//      play();
+//    }
+//    return false;
+//  } else if (String.fromCharCode(keynum) == 'j') {
+//    next();
+//    return false;
+//  } else if (String.fromCharCode(keynum) == 'k') {
+//    previous();
+//    return false;
+//  } else if (String.fromCharCode(keynum) == '/') {
+//    focus_search_box();
+//    return false;
+//  } else if (String.fromCharCode(keynum) == '?') {
+//    show_help();
+//    return false;
+//  }
+  
+  switch(String.fromCharCode(keynum)) {
+    case ' ':      
+        if (current_state == 'play') {
+            pause();
+        } else if (current_state == 'pause') {
+            play();
+        }
+        return false;
+    case 'j':
+        next();
+        return false;
+    case  'k':
+        previous();
+        return false;
+    case '/':
+       focus_search_box();
+       return false;
+    case '?':
+        show_help();
+        return false;
     }
-    return false;
-  } else if (String.fromCharCode(keynum) == 'j') {
-    next();
-    return false;
-  } else if (String.fromCharCode(keynum) == 'k') {
-    previous();
-    return false;
-  } else if (String.fromCharCode(keynum) == '/') {
-    focus_search_box();
-    return false;
-  } else if (String.fromCharCode(keynum) == '?') {
-    show_help();
-    return false;
-  }
+
   return true;
-}
+ }
+ 
