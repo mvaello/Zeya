@@ -24,19 +24,18 @@ body {
 #navigation-bar {
     height: 32px;
     background-color: #b7c4d1;
-   /* background: -moz-linear-gradient(top, #bfccd9, #aebac6);
+    background: -moz-linear-gradient(top, #bfccd9, #aebac6);
     background: -webkit-gradient(linear, left top, left bottom, from(#bfccd9), to(#aebac6));
-    */
+    
     /* TODO -- check it... */
     background: -linear-gradient(top, #bfccd9, #aebac6); 
     border-bottom: 1px #89a solid;
 }
 
 #navigation-bar-left {
-    loat: left;
+    float: left;
     margin: 0;
- /* padding: .25em 0 0 4px;*/
-    padding: .75 0 0 4px;
+    padding: .25em 0 0 4px;
     vertical-align: middle;
 }
 
@@ -124,8 +123,6 @@ form#search-form input {
     padding: 1px;
 }
 
-/* TODO -- Put in one sentence #loading and #unsuported
- * */
 #loading, #unsupported {
     margin: 3em auto 0 auto;
     padding: .25em;
