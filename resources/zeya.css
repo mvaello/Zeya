@@ -25,12 +25,7 @@ body {
     height: 32px;
     background-color: #b7c4d1;
     background: -moz-linear-gradient(top, #bfccd9, #aebac6);
-<<<<<<< HEAD
     background: -webkit-gradient(linear, left top, left bottom, from(#bfccd9), to(#aebac6));
-    
-=======
-    background: -webkit-gradient(linear, left top, left bottom, from(#bfccd9), to(#aebac6)); 
->>>>>>> 7c5e60827fa03f57d77ddb22d010e52acff5abf2
     /* TODO -- check it... */
     background: -linear-gradient(top, #bfccd9, #aebac6); 
     border-bottom: 1px #89a solid;
