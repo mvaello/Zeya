@@ -241,12 +241,19 @@ function render_collection() {
     } else {
       tr.className = get_row_class_from_index(index);
     }
-    
+    //var create_td = document.createElement('td');
     var td1 = document.createElement('td');
     var td2 = document.createElement('td');
     var td3 = document.createElement('td');
     var td4 = document.createElement('td');
     
+    
+   // var td1 = create_td; 
+   // var td2 = create_td;
+   // var td3 = create_td;
+   // var td4 = create_td;
+
+
     // TODO: Create node for duration
     td1.appendChild(link);
     td2.appendChild(document.createTextNode(item.artist));
@@ -698,10 +705,14 @@ function update_time() {
   document.getElementById('time-text-field').innerHTML = minute + ":" + second;
 }
 
-function seek_bar(){
-    º
+//// TODO: check this function...
+//function seek_bar() {
+//
+//  //var duration = current_audio.duration;
+//  var progress = Math.floor(current_audio.currentTime / 100);
+//  document.getElemantById().style().width += progress; 
+//}
 
-}
 
 
 // Clean up after ourselves when the page is unloaded.
@@ -751,28 +762,7 @@ function keypress_handler(e) {
       == window.document.getElementById('search_box')) {
     return true;
   }
-
-//  if (String.fromCharCode(keynum) === ' ') {
-//    if (current_state == 'play') {
-//      pause();
-//    } else if (current_state == 'pause') {
-//      play();
-//    }
-//    return false;
-//  } else if (String.fromCharCode(keynum) == 'j') {
-//    next();
-//    return false;
-//  } else if (String.fromCharCode(keynum) == 'k') {
-//    previous();
-//    return false;
-//  } else if (String.fromCharCode(keynum) == '/') {
-//    focus_search_box();
-//    return false;
-//  } else if (String.fromCharCode(keynum) == '?') {
-//    show_help();
-//    return false;
-//  }
-  
+ 
   switch(String.fromCharCode(keynum)) {
     case ' ':      
         if (current_state == 'play') {
