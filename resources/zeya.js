@@ -727,13 +727,25 @@ function cleanup() {
   }
 }
 
-function keydown_handler(e) {
-  var keynum;
+function catch_key(e) {
+
   if (e.which) {
-    keynum = e.which;
+    return e.which;
   } else {
     return true;
   }
+
+}
+
+
+function keydown_handler(e) {
+  var keynum;
+  keynum = catch_key(e);
+  //if (e.which) {
+  //  keynum = e.which;
+  //} else {
+  //  return true;
+  //}
 
   if (keynum == 27) { // ESC
     // Blur the search box.
@@ -752,11 +764,12 @@ function keydown_handler(e) {
 
 function keypress_handler(e) {
   var keynum;
-  if(e.which) {
-    keynum = e.which;
-  } else {
-    return true;
-  }
+  keynum = catch_key(e);
+ // if(e.which) {
+ //   keynum = e.which;
+ // } else {
+ //   return true;
+ // }
 
   // If editing the search box, don't intercept keypresses.
   // Note, document.activeElement is an HTML5 feature.
@@ -817,7 +830,7 @@ function load_config() {
     }
     
     document.getElementById("select-style").value = theme_dir;
-    changeStyle();
+    change_style();
 }
 
 function change_style() {
