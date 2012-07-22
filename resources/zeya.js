@@ -31,7 +31,7 @@ var is_shuffled = false;
 // Information to display in the status area.
 var status_info = {
   total_tracks: 0,
-  displayed_tracks: 0,
+  displayed_tracks: 0
 };
 
 // We need to buffer streams for Chrome.
@@ -44,8 +44,8 @@ var using_gecko_1_9_1 = navigator.userAgent.indexOf("Gecko/") > -1
 // Return true if the client supports the <audio> tag.
 function can_play_native_audio() {
   if (!document.createElement('audio').canPlayType) {
-    return false;
- }
+        return false;
+  }
   // Supported browsers will return 'probably' or 'maybe' here
   var can_play = document.createElement('audio').canPlayType(
     'audio/ogg; codecs="vorbis"');
@@ -202,7 +202,7 @@ function compute_displayed_content(current_playlist, search_query, shuffle) {
 
 // Render a table to display it the collection.
 function render_collection() {
-  var t = document.createElement('table');
+var t = document.createElement('table');
 
   t.id = "collection_table";
   var t_head = document.createElement("thead");
@@ -241,22 +241,16 @@ function render_collection() {
     } else {
       tr.className = get_row_class_from_index(index);
     }
-    //var create_td = document.createElement('td');
+    
     var td1 = document.createElement('td');
     var td2 = document.createElement('td');
     var td3 = document.createElement('td');
     var td4 = document.createElement('td');
     
-    
-   // var td1 = create_td; 
-   // var td2 = create_td;
-   // var td3 = create_td;
-   // var td4 = create_td;
-
-
     // TODO: Create node for duration
     td1.appendChild(link);
     td2.appendChild(document.createTextNode(item.artist));
+    td3.appendChild(document.createTextNode(item.duration));
     td4.appendChild(document.createTextNode(item.album));
     tr.appendChild(td1);
     tr.appendChild(td2);
@@ -713,6 +707,14 @@ function update_time() {
 //  document.getElemantById().style().width += progress; 
 //}
 
+//function set_track_duration() {
+//    var duration = current_audio.duration;
+//    var minute = Math.floor(duration / 60);
+//    var second = Math.floor(duration - minute * 60);
+//
+//    document.getElementById().innerHTML = minute + ":" + second;
+//
+//}
 
 
 // Clean up after ourselves when the page is unloaded.
@@ -787,3 +789,47 @@ function keypress_handler(e) {
 
   return true;
 }
+
+
+// Request the collection from the server then render it.
+function load_themes() {
+    var rq = new XMLHttpRequest();
+    rq.open('GET', '/get_themes', true);
+    rq.onreadystatechange = function(e) {
+        if (rq.readyState == 4 && rq.status == 200) {
+            library = JSON.parse(req.responseText);
+
+            var opt_list = document.getElementById('select-style');
+            for (var i = 0; i < library.length; i++) {
+                opt_list.options[i] = new Option(library[i]);
+            }
+
+            load_config();
+        }
+};
+req.send(null);
+
+
+function load_config() {
+    var theme_dir = "Default";
+    if (localStorage) {
+        theme_dir = localStorage["select-style"];
+    }
+    
+    document.getElementById("select-style").value = theme_dir;
+    changeStyle();
+}
+
+function change_style() {
+    var theme_dir = document.getElementById("select-style").value;
+    var file = "themes/" + theme_dir + "/zeya.css";
+
+    document.getElementById("loaded-css").href = file;
+}
+
+function save_config() {
+    localStorage["select-style"] = document.getElementById("select-style").value;
+
+    hide_option();
+}
+
