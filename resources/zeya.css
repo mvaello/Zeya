@@ -156,8 +156,6 @@ form#search-form input {
 #help {
     color: #fff;
     width: 25em;
-    margin-left: auto;
-    margin-right: auto;
     border-radius: 5px;
 }
 
@@ -168,7 +166,7 @@ form#search-form input {
     font-size: 120%;
 }
 
-#help table {
+#help, #help table {
     margin-left: auto;
     margin-right: auto;
 }
